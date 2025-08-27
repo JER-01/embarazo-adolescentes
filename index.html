@@ -1,77 +1,251 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Embarazo en Adolescentes</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Embarazo en Adolescentes — Informe Educativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8fafc; color: #111; line-height: 1.6; }
-    header { background: #2563eb; color: white; padding: 2rem; text-align: center; }
-    nav { background: #1e3a8a; padding: 0.5rem; text-align: center; }
-    nav a { color: white; margin: 0 1rem; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    section { padding: 2rem; max-width: 900px; margin: auto; }
-    h2 { color: #2563eb; }
-    footer { background: #1e3a8a; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
-    footer p { margin: 0.3rem 0; }
+    :root{
+      --bg:#0a1025; --fg:#0f172a; --text:#e5e7eb; --muted:#a5b4fc;
+      --accent:#7c3aed; --accent2:#22d3ee; --ok:#34d399; --warn:#fbbf24; --danger:#fb7185;
+      --card:rgba(255,255,255,.06); --border:rgba(255,255,255,.1);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text); background:
+       radial-gradient(1000px 400px at 20% -10%, rgba(124,58,237,.25), transparent),
+       radial-gradient(900px 400px at 80% -20%, rgba(34,211,238,.18), transparent),
+       linear-gradient(180deg,#0a1025 0%,#0f172a 100%);
+      line-height:1.7;
+    }
+    a{color:#8b5cf6}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 1rem}
+    /* NAV */
+    header{position:sticky;top:0;z-index:50;background:rgba(7,11,27,.6);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
+    .brand{font-weight:800;letter-spacing:.4px;display:flex;align-items:center;gap:.6rem}
+    .brand .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+    nav a{color:var(--text);text-decoration:none;padding:.5rem .8rem;border-radius:999px;font-weight:600}
+    nav a:hover{background:rgba(255,255,255,.08)}
+    /* HERO */
+    .hero{
+      position:relative; border-bottom:1px solid var(--border);
+      background:linear-gradient(180deg,rgba(124,58,237,.08),transparent);
+    }
+    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:1.25rem;padding:3.2rem 0}
+    .hero h1{margin:.3rem 0 1rem;font-size:clamp(2rem,4.5vw,3.2rem)}
+    .hero p{color:#c7d2fe}
+    .hero-img{
+      border-radius:1.2rem; min-height:280px; background-size:cover; background-position:center;
+      border:1px solid var(--border); box-shadow:0 20px 60px rgba(0,0,0,.35);
+    }
+    /* SECTIONS */
+    section{padding:2.5rem 0;border-bottom:1px solid var(--border)}
+    h2{font-size:clamp(1.3rem,3vw,2rem);margin:0 0 1rem}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:1.1rem;padding:1rem}
+    .tag{color:#a5b4fc}
+    .stat{display:flex;align-items:center;gap:.7rem}
+    .stat .dot{width:10px;height:10px;border-radius:999px}
+    ul{margin:.5rem 0 0 1.1rem}
+    /* GALLERY */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
+    .gallery img{width:100%;height:210px;object-fit:cover;border-radius:.9rem;border:1px solid var(--border)}
+    /* QUOTE */
+    blockquote{margin:0;background:var(--card);border:1px dashed var(--border);border-radius:1rem;padding:1rem;color:#dbeafe}
+    /* FAQ */
+    .faq details{background:var(--card);border:1px solid var(--border);border-radius:1rem;padding:1rem;margin:.6rem 0}
+    .faq summary{cursor:pointer;font-weight:700}
+    /* FOOTER */
+    footer{background:#0a1128;border-top:1px solid var(--border);padding:1.2rem 0;text-align:center}
+    footer p{margin:.25rem 0;color:#cbd5e1}
+    /* Buttons */
+    .btn{display:inline-block;padding:.8rem 1rem;border-radius:.9rem;text-decoration:none;border:1px solid var(--border);font-weight:700}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#061022;border:none}
+    .btn.secondary{background:rgba(255,255,255,.07);color:var(--text)}
+    /* Responsive */
+    @media (max-width:950px){.hero-inner{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
+    @media (max-width:560px){.gallery{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
+  <!-- NAV -->
   <header>
-    <h1>Embarazo en Adolescentes</h1>
-    <p>Un análisis educativo sobre causas, riesgos y prevención</p>
+    <div class="wrap nav">
+      <div class="brand"><span class="dot"></span> Embarazo Adolescente</div>
+      <nav>
+        <a href="#intro">Introducción</a>
+        <a href="#causas">Causas</a>
+        <a href="#riesgos">Riesgos</a>
+        <a href="#prevencion">Prevención</a>
+        <a href="#galeria">Galería</a>
+        <a href="#recursos">Recursos</a>
+      </nav>
+    </div>
   </header>
-  <nav>
-    <a href="#que-es">¿Qué es?</a>
-    <a href="#causas">Causas</a>
-    <a href="#riesgos">Riesgos</a>
-    <a href="#prevencion">Prevención</a>
-    <a href="#conclusion">Conclusión</a>
-  </nav>
-  <section id="que-es">
-    <h2>¿Qué es el embarazo en adolescentes?</h2>
-    <p>El embarazo en adolescentes ocurre cuando una joven entre 10 y 19 años queda embarazada. Este fenómeno representa un desafío social, educativo y de salud pública en muchos países.</p>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <p class="tag">Informe educativo • Proyecto académico</p>
+        <h1>Embarazo en adolescentes: comprender para prevenir</h1>
+        <p>Material claro y visual para trabajar en aula, comunidad y familia. Incluye causas, riesgos, estrategias de prevención y recursos.</p>
+        <div style="margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap">
+          <a class="btn primary" href="#prevencion">Ver estrategias</a>
+          <a class="btn secondary" href="#recursos">Recursos</a>
+        </div>
+      </div>
+      <!-- Cambia la imagen: sube assets/portada.jpg -->
+      <div class="hero-img" style="background-image:url('assets/portada.jpg');"
+           onerror="this.style.display='none'"></div>
+    </div>
   </section>
+
+  <!-- INTRO -->
+  <section id="intro">
+    <div class="wrap grid-3">
+      <div class="card">
+        <h2>¿Qué es?</h2>
+        <p>El embarazo en adolescentes ocurre entre los 10–19 años. Afecta la salud, la continuidad educativa y las oportunidades futuras, y requiere un abordaje integral.</p>
+      </div>
+      <div class="card">
+        <h2>Determinantes</h2>
+        <ul>
+          <li>Desigualdad de género y social.</li>
+          <li>Información limitada o mitos.</li>
+          <li>Barreras de acceso a anticonceptivos.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Factores protectores</h2>
+        <ul>
+          <li>Educación sexual integral.</li>
+          <li>Servicios de salud amigables y confidenciales.</li>
+          <li>Acompañamiento familiar y escolar.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAUSAS -->
   <section id="causas">
-    <h2>Causas</h2>
-    <p>Las principales causas incluyen:</p>
-    <ul>
-      <li>Falta de educación sexual integral.</li>
-      <li>Escaso acceso a métodos anticonceptivos.</li>
-      <li>Presión de pareja o entorno social.</li>
-      <li>Situaciones de violencia, abuso o desigualdad.</li>
-    </ul>
+    <div class="wrap grid-2">
+      <div class="card">
+        <h2>Causas frecuentes</h2>
+        <ul>
+          <li>Desinformación y escasa educación sexual.</li>
+          <li>Uso irregular o incorrecto de anticonceptivos.</li>
+          <li>Presión de pares/pareja; relaciones desiguales.</li>
+          <li>Violencia sexual y uniones tempranas.</li>
+          <li>Exclusión escolar y pobreza.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Imagen explicativa</h2>
+        <!-- Cambia esta imagen -->
+        <img src="assets/prevencion.jpg" alt="Ilustración educativa"
+             style="width:100%;border-radius:.9rem;border:1px solid var(--border)"
+             onerror="this.style.display='none'">
+        <p class="tag">Sube tus imágenes a <code>assets/</code> y el archivo las mostrará automáticamente.</p>
+      </div>
+    </div>
   </section>
+
+  <!-- RIESGOS -->
   <section id="riesgos">
-    <h2>Riesgos</h2>
-    <p>El embarazo en adolescentes puede generar riesgos como:</p>
-    <ul>
-      <li>Complicaciones médicas durante el embarazo y parto.</li>
-      <li>Abandono escolar y limitación de oportunidades.</li>
-      <li>Dificultades económicas y dependencia.</li>
-      <li>Estigmatización y discriminación social.</li>
-    </ul>
+    <div class="wrap grid-3">
+      <div class="card">
+        <div class="stat"><span class="dot" style="background:var(--danger)"></span><strong>Salud</strong></div>
+        <ul>
+          <li>Mayor riesgo de preeclampsia, anemia y parto prematuro.</li>
+          <li>Demora en controles prenatales.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="stat"><span class="dot" style="background:var(--warn)"></span><strong>Educación</strong></div>
+        <ul>
+          <li>Interrupción o rezago escolar.</li>
+          <li>Menor acceso a empleo de calidad.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="stat"><span class="dot" style="background:var(--ok)"></span><strong>Apoyo</strong></div>
+        <p>Con redes familiares y escolares, y acceso a salud, se reducen daños y se protege el proyecto de vida.</p>
+      </div>
+    </div>
   </section>
+
+  <!-- PREVENCIÓN -->
   <section id="prevencion">
-    <h2>Prevención</h2>
-    <p>Algunas estrategias para reducir el embarazo en adolescentes son:</p>
-    <ul>
-      <li>Implementar programas de educación sexual integral desde edades tempranas.</li>
-      <li>Garantizar el acceso a métodos anticonceptivos seguros y gratuitos.</li>
-      <li>Fortalecer la comunicación en el núcleo familiar.</li>
-      <li>Ofrecer apoyo psicológico y comunitario a jóvenes en situación de riesgo.</li>
-    </ul>
+    <div class="wrap grid-2">
+      <div class="card">
+        <h2>Estrategias de prevención</h2>
+        <ul>
+          <li>Educación sexual integral (ESI) basada en evidencia.</li>
+          <li>Acceso oportuno y gratuito a anticonceptivos.</li>
+          <li>Servicios amigables, confidenciales y sin estigma.</li>
+          <li>Programas de reinserción y becas para continuar estudios.</li>
+          <li>Participación de familias y comunidad.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Infografía / gráfico</h2>
+        <!-- Cambia esta imagen -->
+        <img src="assets/riesgos.jpg" alt="Infografía"
+             style="width:100%;border-radius:.9rem;border:1px solid var(--border)"
+             onerror="this.style.display='none'">
+        <blockquote>“Hablar de sexualidad no promueve el sexo, promueve decisiones informadas.”</blockquote>
+      </div>
+    </div>
   </section>
-  <section id="conclusion">
-    <h2>Conclusión</h2>
-    <p>El embarazo en adolescentes es un tema complejo que requiere acciones conjuntas de la familia, el Estado y la sociedad. La prevención, educación y apoyo son claves para reducir su incidencia y mejorar la calidad de vida de los jóvenes.</p>
+
+  <!-- GALERÍA -->
+  <section id="galeria">
+    <div class="wrap">
+      <h2>Galería</h2>
+      <p class="tag">Súbele emoción visual al contenido con fotografías o ilustraciones propias.</p>
+      <div class="gallery">
+        <img src="assets/galeria-1.jpg" alt="Imagen 1" onerror="this.style.display='none'">
+        <img src="assets/galeria-2.jpg" alt="Imagen 2" onerror="this.style.display='none'">
+        <img src="assets/galeria-3.jpg" alt="Imagen 3" onerror="this.style.display='none'">
+      </div>
+    </div>
   </section>
+
+  <!-- RECURSOS -->
+  <section id="recursos">
+    <div class="wrap grid-2">
+      <div class="card">
+        <h2>Recursos</h2>
+        <ul>
+          <li>Guías de Educación Sexual Integral (ESI) del país.</li>
+          <li>OMS – Salud del Adolescente.</li>
+          <li>UNFPA – Prevención del embarazo adolescente.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Cómo ayudar</h2>
+        <ul>
+          <li>Promueve conversaciones abiertas y respetuosas.</li>
+          <li>Acerca a las y los jóvenes a servicios amigables.</li>
+          <li>Combate mitos con información confiable.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRÉDITOS -->
   <footer>
-    <p>© 2025 Proyecto Educativo - Embarazo en Adolescentes</p>
-    <p>Instituto Central Vicente Cáceres</p>
-    <p>Formulación y Monitoreo de Proyectos</p>
-    <p><strong>Por:</strong> Kiany Abigail Amador López <br>
-    Yennebith Yoheli Cruz Granado</p>
+    <p><strong>Instituto Central Vicente Cáceres</strong> — Formulación y Monitoreo de Proyectos</p>
+    <p><strong>Por:</strong> Kiany Abigail Amador López · Yennebith Yoheli Cruz Granado</p>
+    <p>© 2025 Proyecto Educativo — Embarazo en Adolescentes</p>
   </footer>
 </body>
 </html>
