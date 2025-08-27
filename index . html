@@ -13,6 +13,7 @@
     section { padding: 2rem; max-width: 900px; margin: auto; }
     h2 { color: #2563eb; }
     footer { background: #1e3a8a; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
+    footer p { margin: 0.3rem 0; }
   </style>
 </head>
 <body>
@@ -67,6 +68,10 @@
   </section>
   <footer>
     <p>© 2025 Proyecto Educativo - Embarazo en Adolescentes</p>
+    <p>Instituto Central Vicente Cáceres</p>
+    <p>Formulación y Monitoreo de Proyectos</p>
+    <p><strong>Por:</strong> Kiany Abigail Amador López <br>
+    Yennebith Yoheli Cruz Granado</p>
   </footer>
 </body>
 </html>
