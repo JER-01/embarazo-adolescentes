@@ -4,87 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Embarazo en Adolescentes — Informe Educativo</title>
+
+  <!-- Tipografía elegante -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#0a1025; --fg:#0f172a; --text:#e5e7eb; --muted:#a5b4fc;
-      --accent:#7c3aed; --accent2:#22d3ee; --ok:#34d399; --warn:#fbbf24; --danger:#fb7185;
-      --card:rgba(255,255,255,.06); --border:rgba(255,255,255,.1);
+      --bg:#070b1a; --text:#e7eaf3; --muted:#a6b1e1;
+      --accent:#8b5cf6; --accent2:#22d3ee; --border:rgba(255,255,255,.12);
+      --card:rgba(255,255,255,.06); --card2:rgba(255,255,255,.08);
     }
     *{box-sizing:border-box}
-    html,body{margin:0}
+    html,body{margin:0;scroll-behavior:smooth}
     body{
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--text); background:
-       radial-gradient(1000px 400px at 20% -10%, rgba(124,58,237,.25), transparent),
-       radial-gradient(900px 400px at 80% -20%, rgba(34,211,238,.18), transparent),
-       linear-gradient(180deg,#0a1025 0%,#0f172a 100%);
-      line-height:1.7;
+      font-family:Outfit,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text); line-height:1.75;
+      /* Fondo animado sutil */
+      background:
+        radial-gradient(900px 380px at 15% -10%, rgba(139,92,246,.25), transparent),
+        radial-gradient(800px 380px at 85% -20%, rgba(34,211,238,.18), transparent),
+        linear-gradient(180deg,#060a19 0%,#0e1530 100%);
+      overflow-x:hidden;
     }
-    a{color:#8b5cf6}
+
+    /* UTILIDADES */
     .wrap{max-width:1120px;margin:0 auto;padding:0 1rem}
+    a{color:var(--accent2);text-decoration:none}
+    .tag{color:var(--muted);font-weight:600}
+
     /* NAV */
-    header{position:sticky;top:0;z-index:50;background:rgba(7,11,27,.6);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+    header{position:sticky;top:0;z-index:50;background:rgba(6,10,25,.6);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
-    .brand{font-weight:800;letter-spacing:.4px;display:flex;align-items:center;gap:.6rem}
-    .brand .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2))}
-    nav a{color:var(--text);text-decoration:none;padding:.5rem .8rem;border-radius:999px;font-weight:600}
+    .brand{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.3px}
+    .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 10px rgba(139,92,246,.7)}
+
+    nav a{color:var(--text);padding:.55rem .85rem;border-radius:999px;font-weight:600}
     nav a:hover{background:rgba(255,255,255,.08)}
+
+    /* BOTONES */
+    .btn{display:inline-block;padding:.85rem 1.1rem;border-radius:12px;border:1px solid var(--border);font-weight:700}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#081226;border:none;box-shadow:0 10px 28px rgba(34,211,238,.18)}
+    .btn.secondary{background:var(--card);color:var(--text)}
+    .btn:hover{transform:translateY(-2px);transition:.2s}
+
     /* HERO */
-    .hero{
-      position:relative; border-bottom:1px solid var(--border);
-      background:linear-gradient(180deg,rgba(124,58,237,.08),transparent);
-    }
-    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:1.25rem;padding:3.2rem 0}
-    .hero h1{margin:.3rem 0 1rem;font-size:clamp(2rem,4.5vw,3.2rem)}
-    .hero p{color:#c7d2fe}
-    .hero-img{
-      border-radius:1.2rem; min-height:280px; background-size:cover; background-position:center;
-      border:1px solid var(--border); box-shadow:0 20px 60px rgba(0,0,0,.35);
-    }
-    /* SECTIONS */
-    section{padding:2.5rem 0;border-bottom:1px solid var(--border)}
-    h2{font-size:clamp(1.3rem,3vw,2rem);margin:0 0 1rem}
+    .hero{border-bottom:1px solid var(--border)}
+    .hero-inner{display:grid;gap:1.25rem;padding:3rem 0}
+    .hero h1{margin:.25rem 0 1rem;font-size:clamp(2rem,4.6vw,3.25rem)}
+    .lead{color:#cdd5ff}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1.1rem}
+    .kpi{background:var(--card);border:1px solid var(--border);padding:1rem;border-radius:14px}
+    .kpi strong{font-size:1.1rem}
+
+    /* SECCIONES */
+    section{padding:2.3rem 0;border-bottom:1px solid var(--border)}
+    h2{font-size:clamp(1.35rem,3.1vw,2rem);margin:.15rem 0 1rem}
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:1.1rem;padding:1rem}
-    .tag{color:#a5b4fc}
-    .stat{display:flex;align-items:center;gap:.7rem}
-    .stat .dot{width:10px;height:10px;border-radius:999px}
-    ul{margin:.5rem 0 0 1.1rem}
-    /* GALLERY */
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
-    .gallery img{width:100%;height:210px;object-fit:cover;border-radius:.9rem;border:1px solid var(--border)}
-    /* QUOTE */
-    blockquote{margin:0;background:var(--card);border:1px dashed var(--border);border-radius:1rem;padding:1rem;color:#dbeafe}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1rem;transition:transform .25s, box-shadow .25s}
+    .card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,0,0,.25)}
+    ul{margin:.55rem 0 0 1.1rem}
+    .pill{display:inline-block;padding:.2rem .55rem;border-radius:999px;background:var(--card2);border:1px solid var(--border);font-size:.85rem}
+
     /* FAQ */
-    .faq details{background:var(--card);border:1px solid var(--border);border-radius:1rem;padding:1rem;margin:.6rem 0}
-    .faq summary{cursor:pointer;font-weight:700}
+    .faq details{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1rem;margin:.6rem 0}
+    .faq summary{cursor:pointer;font-weight:800}
+
     /* FOOTER */
-    footer{background:#0a1128;border-top:1px solid var(--border);padding:1.2rem 0;text-align:center}
-    footer p{margin:.25rem 0;color:#cbd5e1}
-    /* Buttons */
-    .btn{display:inline-block;padding:.8rem 1rem;border-radius:.9rem;text-decoration:none;border:1px solid var(--border);font-weight:700}
-    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#061022;border:none}
-    .btn.secondary{background:rgba(255,255,255,.07);color:var(--text)}
-    /* Responsive */
-    @media (max-width:950px){.hero-inner{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
-    @media (max-width:560px){.gallery{grid-template-columns:1fr}}
+    footer{background:#0b1130;border-top:1px solid var(--border);padding:1.2rem 0;text-align:center}
+    footer p{margin:.25rem 0;color:#cfd6ff}
+
+    /* Responsivo */
+    @media (max-width:980px){.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.kpis{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
+
   <!-- NAV -->
   <header>
     <div class="wrap nav">
       <div class="brand"><span class="dot"></span> Embarazo Adolescente</div>
-      <nav>
+      <nav aria-label="Principal">
         <a href="#intro">Introducción</a>
         <a href="#causas">Causas</a>
         <a href="#riesgos">Riesgos</a>
         <a href="#prevencion">Prevención</a>
-        <a href="#galeria">Galería</a>
         <a href="#recursos">Recursos</a>
       </nav>
     </div>
@@ -94,17 +100,19 @@
   <section class="hero">
     <div class="wrap hero-inner">
       <div>
-        <p class="tag">Informe educativo • Proyecto académico</p>
+        <span class="pill">Informe educativo • Proyecto académico</span>
         <h1>Embarazo en adolescentes: comprender para prevenir</h1>
-        <p>Material claro y visual para trabajar en aula, comunidad y familia. Incluye causas, riesgos, estrategias de prevención y recursos.</p>
+        <p class="lead">Contenido claro y visual para trabajar en aula, comunidad y familia. Cubre causas, riesgos, estrategias de prevención y materiales de apoyo.</p>
         <div style="margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap">
           <a class="btn primary" href="#prevencion">Ver estrategias</a>
           <a class="btn secondary" href="#recursos">Recursos</a>
         </div>
+        <div class="kpis">
+          <div class="kpi"><strong>10–19 años</strong><br><span class="tag">Rango OMS</span></div>
+          <div class="kpi"><strong>Prevención</strong><br><span class="tag">ESI + anticoncepción</span></div>
+          <div class="kpi"><strong>Apoyo</strong><br><span class="tag">Familia • Escuela • Salud</span></div>
+        </div>
       </div>
-      <!-- Cambia la imagen: sube assets/portada.jpg -->
-      <div class="hero-img" style="background-image:url('assets/portada.jpg');"
-           onerror="this.style.display='none'"></div>
     </div>
   </section>
 
@@ -113,7 +121,7 @@
     <div class="wrap grid-3">
       <div class="card">
         <h2>¿Qué es?</h2>
-        <p>El embarazo en adolescentes ocurre entre los 10–19 años. Afecta la salud, la continuidad educativa y las oportunidades futuras, y requiere un abordaje integral.</p>
+        <p>El embarazo en adolescentes ocurre entre los 10–19 años. Impacta la salud, la continuidad educativa y las oportunidades futuras, por lo que requiere un abordaje integral.</p>
       </div>
       <div class="card">
         <h2>Determinantes</h2>
@@ -126,7 +134,7 @@
       <div class="card">
         <h2>Factores protectores</h2>
         <ul>
-          <li>Educación sexual integral.</li>
+          <li>Educación sexual integral basada en evidencia.</li>
           <li>Servicios de salud amigables y confidenciales.</li>
           <li>Acompañamiento familiar y escolar.</li>
         </ul>
@@ -148,12 +156,8 @@
         </ul>
       </div>
       <div class="card">
-        <h2>Imagen explicativa</h2>
-        <!-- Cambia esta imagen -->
-        <img src="assets/prevencion.jpg" alt="Ilustración educativa"
-             style="width:100%;border-radius:.9rem;border:1px solid var(--border)"
-             onerror="this.style.display='none'">
-        <p class="tag">Sube tus imágenes a <code>assets/</code> y el archivo las mostrará automáticamente.</p>
+        <h2>Determinantes sociales</h2>
+        <p>La pobreza, la desigualdad de género y la falta de servicios amigables incrementan el embarazo no intencional. Un enfoque intersectorial es imprescindible.</p>
       </div>
     </div>
   </section>
@@ -162,21 +166,21 @@
   <section id="riesgos">
     <div class="wrap grid-3">
       <div class="card">
-        <div class="stat"><span class="dot" style="background:var(--danger)"></span><strong>Salud</strong></div>
+        <h2><span class="dot" style="background:#fb7185"></span> Salud</h2>
         <ul>
           <li>Mayor riesgo de preeclampsia, anemia y parto prematuro.</li>
-          <li>Demora en controles prenatales.</li>
+          <li>Demora en controles prenatales y menor adherencia.</li>
         </ul>
       </div>
       <div class="card">
-        <div class="stat"><span class="dot" style="background:var(--warn)"></span><strong>Educación</strong></div>
+        <h2><span class="dot" style="background:#fbbf24"></span> Educación</h2>
         <ul>
           <li>Interrupción o rezago escolar.</li>
           <li>Menor acceso a empleo de calidad.</li>
         </ul>
       </div>
       <div class="card">
-        <div class="stat"><span class="dot" style="background:var(--ok)"></span><strong>Apoyo</strong></div>
+        <h2><span class="dot" style="background:#34d399"></span> Entorno</h2>
         <p>Con redes familiares y escolares, y acceso a salud, se reducen daños y se protege el proyecto de vida.</p>
       </div>
     </div>
@@ -188,55 +192,42 @@
       <div class="card">
         <h2>Estrategias de prevención</h2>
         <ul>
-          <li>Educación sexual integral (ESI) basada en evidencia.</li>
+          <li>Educación sexual integral (ESI) en escuela y comunidad.</li>
           <li>Acceso oportuno y gratuito a anticonceptivos.</li>
           <li>Servicios amigables, confidenciales y sin estigma.</li>
           <li>Programas de reinserción y becas para continuar estudios.</li>
-          <li>Participación de familias y comunidad.</li>
+          <li>Participación activa de familias y comunidad.</li>
         </ul>
       </div>
       <div class="card">
-        <h2>Infografía / gráfico</h2>
-        <!-- Cambia esta imagen -->
-        <img src="assets/riesgos.jpg" alt="Infografía"
-             style="width:100%;border-radius:.9rem;border:1px solid var(--border)"
-             onerror="this.style.display='none'">
-        <blockquote>“Hablar de sexualidad no promueve el sexo, promueve decisiones informadas.”</blockquote>
+        <h2>¿Qué puede hacer cada actor?</h2>
+        <ul>
+          <li><strong>Familia:</strong> diálogo abierto y respetuoso.</li>
+          <li><strong>Escuela:</strong> ESI y protocolos de derivación.</li>
+          <li><strong>Salud:</strong> consejería y provisión de métodos.</li>
+          <li><strong>Comunidad:</strong> espacios seguros y redes de apoyo.</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- GALERÍA -->
-  <section id="galeria">
-    <div class="wrap">
-      <h2>Galería</h2>
-      <p class="tag">Súbele emoción visual al contenido con fotografías o ilustraciones propias.</p>
-      <div class="gallery">
-        <img src="assets/galeria-1.jpg" alt="Imagen 1" onerror="this.style.display='none'">
-        <img src="assets/galeria-2.jpg" alt="Imagen 2" onerror="this.style.display='none'">
-        <img src="assets/galeria-3.jpg" alt="Imagen 3" onerror="this.style.display='none'">
-      </div>
-    </div>
-  </section>
-
-  <!-- RECURSOS -->
+  <!-- RECURSOS + FAQ -->
   <section id="recursos">
     <div class="wrap grid-2">
       <div class="card">
         <h2>Recursos</h2>
         <ul>
           <li>Guías de Educación Sexual Integral (ESI) del país.</li>
-          <li>OMS – Salud del Adolescente.</li>
-          <li>UNFPA – Prevención del embarazo adolescente.</li>
+          <li>OMS — Salud del Adolescente.</li>
+          <li>UNFPA — Prevención del embarazo adolescente.</li>
         </ul>
+        <p class="tag">Usa fuentes confiables y actualizadas para tus trabajos.</p>
       </div>
-      <div class="card">
-        <h2>Cómo ayudar</h2>
-        <ul>
-          <li>Promueve conversaciones abiertas y respetuosas.</li>
-          <li>Acerca a las y los jóvenes a servicios amigables.</li>
-          <li>Combate mitos con información confiable.</li>
-        </ul>
+      <div class="card faq">
+        <h2>Mitos frecuentes (FAQ)</h2>
+        <details><summary>“Con la primera vez no hay riesgo”</summary><p>Falso: existe riesgo de embarazo en cualquier relación sin protección.</p></details>
+        <details><summary>“Los anticonceptivos son peligrosos”</summary><p>La mayoría son seguros y eficaces si se indican correctamente.</p></details>
+        <details><summary>“Hablar de sexualidad promueve el sexo”</summary><p>La evidencia muestra que la ESI retrasa inicios y aumenta el uso de protección.</p></details>
       </div>
     </div>
   </section>
