@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>El embarazo en adolescentes</title>
+  <title>Embarazo en Adolescentes</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8fafc; color: #111; }
-    header { background: #2563eb; color: white; padding: 1rem; text-align: center; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8fafc; color: #111; line-height: 1.6; }
+    header { background: #2563eb; color: white; padding: 2rem; text-align: center; }
     nav { background: #1e3a8a; padding: 0.5rem; text-align: center; }
     nav a { color: white; margin: 0 1rem; text-decoration: none; font-weight: bold; }
     nav a:hover { text-decoration: underline; }
@@ -17,50 +17,56 @@
 </head>
 <body>
   <header>
-    <h1>El embarazo en adolescentes</h1>
-    <p>Información, riesgos, causas y prevención</p>
+    <h1>Embarazo en Adolescentes</h1>
+    <p>Un análisis educativo sobre causas, riesgos y prevención</p>
   </header>
   <nav>
     <a href="#que-es">¿Qué es?</a>
     <a href="#causas">Causas</a>
     <a href="#riesgos">Riesgos</a>
     <a href="#prevencion">Prevención</a>
+    <a href="#conclusion">Conclusión</a>
   </nav>
   <section id="que-es">
     <h2>¿Qué es el embarazo en adolescentes?</h2>
-    <p>El embarazo en adolescentes se refiere a la gestación que ocurre en jóvenes entre los 10 y 19 años. Este fenómeno suele estar asociado a riesgos médicos, sociales y económicos.</p>
+    <p>El embarazo en adolescentes ocurre cuando una joven entre 10 y 19 años queda embarazada. Este fenómeno representa un desafío social, educativo y de salud pública en muchos países.</p>
   </section>
   <section id="causas">
     <h2>Causas</h2>
+    <p>Las principales causas incluyen:</p>
     <ul>
       <li>Falta de educación sexual integral.</li>
-      <li>Acceso limitado a métodos anticonceptivos.</li>
-      <li>Presión social y de pareja.</li>
-      <li>Entornos de violencia o abuso.</li>
+      <li>Escaso acceso a métodos anticonceptivos.</li>
+      <li>Presión de pareja o entorno social.</li>
+      <li>Situaciones de violencia, abuso o desigualdad.</li>
     </ul>
   </section>
   <section id="riesgos">
     <h2>Riesgos</h2>
-    <p>El embarazo en adolescentes puede ocasionar:</p>
+    <p>El embarazo en adolescentes puede generar riesgos como:</p>
     <ul>
-      <li>Complicaciones médicas durante el embarazo y el parto.</li>
-      <li>Interrupción de la educación.</li>
-      <li>Mayor vulnerabilidad económica.</li>
-      <li>Estigmatización social.</li>
+      <li>Complicaciones médicas durante el embarazo y parto.</li>
+      <li>Abandono escolar y limitación de oportunidades.</li>
+      <li>Dificultades económicas y dependencia.</li>
+      <li>Estigmatización y discriminación social.</li>
     </ul>
   </section>
   <section id="prevencion">
     <h2>Prevención</h2>
-    <p>Algunas estrategias de prevención incluyen:</p>
+    <p>Algunas estrategias para reducir el embarazo en adolescentes son:</p>
     <ul>
-      <li>Promover la educación sexual integral.</li>
-      <li>Facilitar el acceso a métodos anticonceptivos.</li>
-      <li>Impulsar programas de apoyo comunitario.</li>
-      <li>Fortalecer la comunicación entre familias y adolescentes.</li>
+      <li>Implementar programas de educación sexual integral desde edades tempranas.</li>
+      <li>Garantizar el acceso a métodos anticonceptivos seguros y gratuitos.</li>
+      <li>Fortalecer la comunicación en el núcleo familiar.</li>
+      <li>Ofrecer apoyo psicológico y comunitario a jóvenes en situación de riesgo.</li>
     </ul>
   </section>
+  <section id="conclusion">
+    <h2>Conclusión</h2>
+    <p>El embarazo en adolescentes es un tema complejo que requiere acciones conjuntas de la familia, el Estado y la sociedad. La prevención, educación y apoyo son claves para reducir su incidencia y mejorar la calidad de vida de los jóvenes.</p>
+  </section>
   <footer>
-    <p>© 2025 Sitio educativo sobre el embarazo en adolescentes</p>
+    <p>© 2025 Proyecto Educativo - Embarazo en Adolescentes</p>
   </footer>
 </body>
 </html>
